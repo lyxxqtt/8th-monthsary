@@ -1,0 +1,212 @@
+/* -------------------------------
+   Container Layout and Countdown
+   ------------------------------- */
+.container {
+  max-width: 600px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2.5rem; 
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  position: relative;
+  margin: 3rem auto; 
+}
+
+.icon-lock {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #c2185b;
+  margin-bottom: 1.5rem;
+  animation: floatUpDown 2.5s ease-in-out infinite;
+}
+
+/* animation keyframes */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem); 
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #880e4f;
+  line-height: 1.2;
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #4e0f30;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  padding: 0 1rem; 
+}
+
+#countdown {
+  display: inline-block;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: #c2185b;
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  letter-spacing: 1.2px;
+  user-select: none;
+  cursor: default;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  word-break: break-word; 
+}
+
+#countdown a#continueBtn {
+  text-decoration: none;
+  color: #c2185b;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #fce4ec;
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(194,24,91,0.25);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap; 
+}
+
+/* Responsive tweaks for very small devices */
+@media (max-width: 400px) {
+  .container {
+    padding: 2rem 1.5rem;
+    margin: 1.5rem auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  #countdown, #countdown a#continueBtn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* --------------------------
+   Pin clicker styles (Responsive)
+   -------------------------- */
+.pin-container {
+  margin-top: 30px;
+  padding: 2rem 1.5rem;
+  background: #fff0f6;
+  border-radius: 25px;
+  border: 2px solid #f8bbd0;
+  box-shadow: 0 12px 30px rgba(194, 24, 91, 0.15);
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.pin-container:hover {
+  box-shadow: 0 15px 40px rgba(194, 24, 91, 0.25);
+}
+
+.pin-display {
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  letter-spacing: 1.3rem;
+  color: #ad1457;
+  margin-bottom: 30px;
+  min-height: 50px;
+  user-select: none;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fde8ef;
+  border-radius: 14px;
+  border: 2px solid #f48fb1;
+  padding: 12px 0;
+  box-shadow: inset 0 3px 7px rgba(173, 20, 87, 0.25);
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow-wrap: break-word;
+}
+
+.pin-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 14px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.pin-button {
+  background-color: #fce4ec;
+  border-radius: 16px;
+  padding: 16px 0;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-weight: 700;
+  color: #c2185b;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(194, 24, 91, 0.25);
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  border: 2px solid #f8bbd0;
+}
+
+.pin-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(194, 24, 91, 0.2);
+}
+
+@media (max-width: 480px) {
+  .pin-display {
+    font-size: 1.5rem;
+    letter-spacing: 0.9rem;
+    padding: 10px 0;
+  }
+
+  .pin-buttons {
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pin-button {
+    padding: 14px 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .pin-display {
+    font-size: 1.3rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .pin-button {
+    padding: 12px 0;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .pin-buttons {
+    gap: 8px;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+}
