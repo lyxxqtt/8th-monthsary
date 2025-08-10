@@ -1,0 +1,237 @@
+/* 
+  Style ng buong app dito:  
+  - Center ng container with nice fonts and padding  
+  - Cool pink "Click Me" button with smooth fade-in animation at page load  
+  - Countdown numbers na bold at flashy na nag-a-animate  
+  - Special message text gamit ang Pacifico font na may fade effects  
+  - Final message box na may soft pink background at shadow  
+  - Play sound button na bilog, gradient at may hover effect  
+  - Lyrics area na naka-Pacfico font, nagfa-fade at nag-zoom in/out  
+  - Responsive design para maayos sa iba't ibang screen sizes  
+*/
+
+#container {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+/* CLICK ME BUTTON */
+#clickBtn {
+  padding: 15px 35px;
+  font-size: 22px;
+  border: none;
+  background-color: #ff7eb9;
+  color: white;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 126, 185, 0.4);
+  transition: 
+    transform 0.35s ease, 
+    background-color 0.35s ease, 
+    box-shadow 0.35s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInBtn 0.8s forwards ease-in-out;
+}
+
+#clickBtn:hover {
+  transform: scale(1.08);
+  background-color: #ff609d;
+  box-shadow: 0 10px 25px rgba(255, 96, 157, 0.5);
+}
+
+@keyframes fadeInBtn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* COUNTDOWN NUMBERS */
+#countdown {
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #ff4d6d;
+  text-shadow: 0 0 18px rgba(255, 99, 132, 0.35);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.8);
+}
+
+#countdown.show {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* ARE YOU READY TEXT CSS*/
+#message {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 25px;
+  color: #d6336c;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.85);
+  font-family: 'Pacifico', cursive;
+  text-shadow: 0 0 12px rgba(214, 51, 108, 0.2);
+}
+
+#message.show {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* FINAL MESSAGE BOX */
+#finalMessage {
+  display: none;
+  opacity: 0;
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+  font-size: 22px;
+  line-height: 1.8;
+  background: rgba(255, 240, 245, 0.92);
+  padding: 30px 25px;
+  border-radius: 25px;
+  color: #6d214f;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(255, 94, 120, 0.25);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.95);
+  position: relative;
+}
+
+#finalMessage.show {
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* PLAY SOUND BUTTON */
+#playBtn {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  box-shadow: 0 6px 12px rgba(255, 94, 120, 0.5);
+  transition: background 0.45s ease, box-shadow 0.45s ease, transform 0.35s ease;
+  will-change: background, box-shadow, transform;
+  display: block;
+  margin: 25px auto 0;
+}
+
+#playBtn:hover {
+  background: linear-gradient(135deg, #ff5a75, #ff6e96);
+  box-shadow: 0 10px 22px rgba(255, 94, 120, 0.6);
+  transform: scale(1.1);
+}
+
+#playBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(255, 94, 120, 0.3);
+}
+
+#playBtn svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* LYRICS AREA */
+#lyrics {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d6336c;
+  font-family: 'Pacifico', cursive;
+  margin-top: 30px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#lyrics.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  #clickBtn {
+    padding: 12px 28px;
+    font-size: 20px;
+  }
+
+  #countdown {
+    font-size: 70px;
+  }
+
+  #message {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+
+  #finalMessage {
+    font-size: 20px;
+    padding: 25px 20px;
+    margin-top: 25px;
+  }
+
+  #playBtn {
+    width: 52px;
+    height: 52px;
+  }
+
+  #playBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  #clickBtn {
+    padding: 10px 22px;
+    font-size: 18px;
+  }
+
+  #countdown {
+    font-size: 56px;
+  }
+
+  #message {
+    font-size: 26px;
+  }
+
+  #finalMessage {
+    font-size: 18px;
+    padding: 20px 16px;
+  }
+
+  #playBtn {
+    width: 45px;
+    height: 45px;
+  }
+
+  #playBtn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+}

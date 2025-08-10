@@ -1,3 +1,16 @@
+/*
+  Countdown timer until unlock time tapos pag zero,
+  lalabas yung "Continue" link na pwede i-click.
+  Pag-click ng continue, lalabas yung PIN input interface:
+  - May 0-9 buttons na may fade-in effect
+  - PIN display area para makita yung input
+  - Backspace button para burahin ang last digit
+  - Kapag 6 digits na na-enter, icheck kung tama yung PIN (121124)
+  - Kung tama, may success message tapos redirect sa nextpage.html
+  - Kung mali, may error message na nag-shake yung display
+  - May modal popup para sa messages
+*/
+
 const unlockTime = new Date('2025-08-11T23:59:00');
 
 // Get references to elements that will be updated dynamically

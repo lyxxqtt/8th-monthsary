@@ -1,5 +1,15 @@
 
-   
+/*
+  Styles para sa countdown container at PIN input interface.
+  - Sticker SVG sa top left with responsive positioning.
+  - Container design with blur and shadow effects.
+  - Animated lock icon na lumulutang pataas-pababa.
+  - Countdown timer styling with clickable continue button.
+  - PIN input container with buttons, display, and hover effects.
+  - Responsive adjustments para sa smaller screens.
+  - Fade-in animation para sa smooth entrance ng buttons/text.
+*/
+
  /* SVG STICKER ON THE TOP LEFT SIDE */
 .sticker-on-top {
   position: absolute;

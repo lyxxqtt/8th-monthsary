@@ -6,14 +6,37 @@
   <title>8th Monthsary</title>
 
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/style/css/size-body.css" />
   <link rel="stylesheet" href="assets/style/css/nextpage.css" />
-  <link rel="stylesheet" href="assets/style/css/loading-screen.css" />
 </head>
+<body>
+
+  <div id="container">
+    <button id="clickBtn">Click Me</button>
+
+    <div id="countdown"></div>
+    <div id="message">Are you ready?!</div>
+
+    <!-- Final Message -->
+    <div id="finalMessage">
+      <p>
+        Hi babal, happy 8th monthsary po! Gusto ko lamang sabihin na mahal na mahal kita, at thankful po ako na nandito ka.
+        Lagi kang mag-iingat sa pinaggagawa mo at gagawin mo. Isa lamang ang gusto kong sabihin at iyon ay:
+      </p>
+      <button id="playBtn" aria-label="Play">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Lyrics -->
+    <div id="lyrics"></div>
+  </div>
+
+  <script src="assets/style/css/nextpage.js"></script>
+</body>
+</html>
